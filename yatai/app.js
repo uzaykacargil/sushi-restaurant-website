@@ -1,4 +1,4 @@
-/* =====================================================
+﻿/* =====================================================
    YATAI — app.js
    Cart state, filters, drawer, checkout, animations
    ===================================================== */
@@ -165,7 +165,7 @@ function updateCartUI() {
       <img class="cart-item-img" src="${item.img}" alt="${item.name}" />
       <div class="cart-item-info">
         <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-price">$${(item.price * item.qty).toFixed(2)}</div>
+        <div class="cart-item-price">€${(item.price * item.qty).toFixed(2)}</div>
       </div>
       <div class="cart-item-controls">
         <button class="qty-btn" onclick="changeQty('${item.id}', -1)" aria-label="Decrease quantity">−</button>
@@ -178,8 +178,8 @@ function updateCartUI() {
   });
 
   // Summary numbers
-  document.getElementById('summary-subtotal').textContent = `$${subtotal.toFixed(2)}`;
-  document.getElementById('summary-total').textContent    = `$${total.toFixed(2)}`;
+  document.getElementById('summary-subtotal').textContent = `€${subtotal.toFixed(2)}`;
+  document.getElementById('summary-total').textContent    = `€${total.toFixed(2)}`;
 
   const feeRow = document.getElementById('delivery-fee-row');
   feeRow.style.display = orderType === 'delivery' ? 'flex' : 'none';
@@ -227,12 +227,12 @@ function openCheckout() {
   // Populate mini summary
   const mini = document.getElementById('mini-items');
   mini.innerHTML = cart.map(i =>
-    `<div class="mini-item"><span>${i.name} ×${i.qty}</span><span>$${(i.price * i.qty).toFixed(2)}</span></div>`
+    `<div class="mini-item"><span>${i.name} ×${i.qty}</span><span>€${(i.price * i.qty).toFixed(2)}</span></div>`
   ).join('');
 
   const deliveryFee = orderType === 'delivery' ? 2.99 : 0;
   const total       = cart.reduce((s, i) => s + i.price * i.qty, 0) + deliveryFee;
-  document.getElementById('mini-total-val').textContent = `$${total.toFixed(2)}`;
+  document.getElementById('mini-total-val').textContent = `€${total.toFixed(2)}`;
 
   // Pre-fill delivery address if entered
   const drawerAddr = document.getElementById('addr-input').value;
