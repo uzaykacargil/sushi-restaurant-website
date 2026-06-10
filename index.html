@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sushi Zen — Premium Japanese sushi restaurant in the heart of the city. Experience authentic omakase, hand-crafted nigiri, and an unparalleled dining atmosphere. Reserve your table today." />
+  <meta name="keywords" content="sushi, Japanese restaurant, omakase, nigiri, sashimi, maki, fine dining" />
+  <meta property="og:title" content="Sushi Zen — Authentic Japanese Fine Dining" />
+  <meta property="og:description" content="Experience the art of sushi at Sushi Zen. Premium omakase, hand-crafted nigiri, and an unforgettable ambiance." />
+  <title>Sushi Zen — Authentic Japanese Fine Dining</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon emoji fallback -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍣</text></svg>" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo" id="nav-logo-link">
+        <div class="nav-logo-mark">🍣</div>
+        <span class="nav-logo-text">Sushi<span>Zen</span></span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#story" id="nav-story">Our Story</a></li>
+        <li><a href="#menu" id="nav-menu">Menu</a></li>
+        <li><a href="#experience" id="nav-experience">Experience</a></li>
+        <li><a href="#reservation" id="nav-contact">Contact</a></li>
+        <li>
+          <a href="#" class="nav-reserve-btn" id="nav-reserve-btn" onclick="openModal(event)">
+            Reserve a Table
+          </a>
+        </li>
+      </ul>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" aria-label="Hero section">
+    <div class="hero-bg">
+      <img src="images/hero.png" alt="Premium sushi platter" loading="eager" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">✦ Omakase Experience</div>
+
+        <h1 class="hero-title">
+          The Art of<br />
+          <em class="gold-text">Japanese Sushi</em>
+        </h1>
+
+        <p class="hero-description">
+          A culinary journey where tradition meets perfection. Every piece of
+          sushi is crafted by hand with the finest seasonal ingredients, inspired
+          by the ancient art of the itamae.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn-primary" id="hero-reserve-btn" onclick="openModal(event)">
+            <span>Reserve a Table</span>
+            <span>→</span>
+          </button>
+          <a href="#menu" class="btn-secondary" id="hero-menu-btn">
+            <span>🍱</span>
+            <span>Explore Menu</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-count="12">0</span>
+            <span class="hero-stat-label">Years of Craft</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-count="48">0</span>
+            <span class="hero-stat-label">Signature Dishes</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-count="3">0</span>
+            <span class="hero-stat-label">Michelin Stars</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STORY ===== -->
+  <section id="story" aria-label="Our story section">
+    <div class="container">
+      <div class="story-grid">
+
+        <div class="story-images fade-in">
+          <img class="story-img-main" src="images/ambiance.png" alt="Sushi Zen restaurant interior ambiance" />
+          <img class="story-img-accent" src="images/chef.png" alt="Chef crafting sushi" />
+          <div class="story-badge">
+            <span class="story-badge-num">12</span>
+            <span class="story-badge-text">Years</span>
+          </div>
+        </div>
+
+        <div class="story-text fade-in">
+          <span class="section-label">✦ Our Philosophy</span>
+          <h2 class="section-title">Where Zen Meets<br /><span class="gold-text">Culinary Mastery</span></h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">
+            Founded by Master Chef Hiroshi Tanaka, Sushi Zen was born from a
+            lifelong dedication to the ancient traditions of Edo-style sushi. Each
+            visit is a meditative experience — a celebration of seasonality,
+            precision, and the quiet beauty of simplicity.
+          </p>
+          <br />
+          <p class="section-subtitle">
+            We source our fish directly from Tsukiji-certified suppliers daily,
+            ensuring every bite is as fresh as the morning tide.
+          </p>
+
+          <div class="story-features">
+            <div class="story-feature">
+              <span class="story-feature-icon">🐟</span>
+              <div>
+                <div class="story-feature-title">Daily Fresh Import</div>
+                <div class="story-feature-desc">Direct from Tsukiji market</div>
+              </div>
+            </div>
+            <div class="story-feature">
+              <span class="story-feature-icon">🏆</span>
+              <div>
+                <div class="story-feature-title">Michelin Starred</div>
+                <div class="story-feature-desc">3 stars since 2019</div>
+              </div>
+            </div>
+            <div class="story-feature">
+              <span class="story-feature-icon">🌿</span>
+              <div>
+                <div class="story-feature-title">Seasonal Menu</div>
+                <div class="story-feature-desc">Updated every month</div>
+              </div>
+            </div>
+            <div class="story-feature">
+              <span class="story-feature-icon">🍶</span>
+              <div>
+                <div class="story-feature-title">Premium Sake</div>
+                <div class="story-feature-desc">100+ curated selections</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU ===== -->
+  <section id="menu" aria-label="Menu section">
+    <div class="container">
+      <div class="menu-header fade-in">
+        <span class="section-label">✦ Culinary Selections</span>
+        <h2 class="section-title">Our Signature Menu</h2>
+        <div class="divider"></div>
+        <p class="section-subtitle">
+          Handcrafted with the freshest ingredients, every dish tells a story of
+          Japanese tradition and modern artistry.
+        </p>
+      </div>
+
+      <div class="menu-filters fade-in" role="group" aria-label="Menu category filters">
+        <button class="filter-btn active" id="filter-all" data-filter="all">All Items</button>
+        <button class="filter-btn" id="filter-nigiri" data-filter="nigiri">Nigiri</button>
+        <button class="filter-btn" id="filter-rolls" data-filter="rolls">Signature Rolls</button>
+        <button class="filter-btn" id="filter-sashimi" data-filter="sashimi">Sashimi</button>
+        <button class="filter-btn" id="filter-dessert" data-filter="dessert">Desserts</button>
+      </div>
+
+      <div class="menu-grid" id="menu-grid" aria-label="Menu items">
+
+        <!-- Nigiri -->
+        <div class="menu-card fade-in" data-category="nigiri" id="menu-salmon-nigiri">
+          <div class="menu-card-img-wrap">
+            <img class="menu-card-img" src="images/salmon_nigiri.png" alt="Salmon Nigiri" loading="lazy" />
+            <span class="menu-card-tag tag-popular">Popular</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Salmon Nigiri</h3>
+            <p class="menu-card-desc">Atlantic premium salmon over hand-pressed vinegared rice, finished with yuzu zest.</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">$18</span>
+              <button class="menu-card-order" aria-label="Add Salmon Nigiri to order" title="Add to order">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card fade-in" data-category="nigiri" id="menu-otoro-nigiri">
+          <div class="menu-card-img-wrap">
+            <img class="menu-card-img" src="images/tuna_sashimi.png" alt="Otoro Tuna Nigiri" loading="lazy" />
+            <span class="menu-card-tag tag-popular">Chef's Pick</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Ōtoro Tuna Nigiri</h3>
+            <p class="menu-card-desc">Fatty bluefin tuna belly, the most prized cut, lightly torched and seasoned with soy.</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">$32</span>
+              <button class="menu-card-order" aria-label="Add Otoro Tuna Nigiri to order" title="Add to order">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rolls -->
+        <div class="menu-card fade-in" data-category="rolls" id="menu-dragon-roll">
+          <div class="menu-card-img-wrap">
+            <img class="menu-card-img" src="images/dragon_roll.png" alt="Dragon Roll" loading="lazy" />
+            <span class="menu-card-tag tag-new">New</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Dragon Roll</h3>
+            <p class="menu-card-desc">Shrimp tempura and cucumber inside, topped with avocado, eel sauce, and spicy mayo.</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">$26</span>
+              <button class="menu-card-order" aria-label="Add Dragon Roll to order" title="Add to order">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card fade-in" data-category="rolls" id="menu-volcano-roll">
+          <div class="menu-card-img-wrap">
+            <img class="menu-card-img" src="images/salmon_nigiri.png" alt="Volcano Roll" loading="lazy" />
+            <span class="menu-card-tag tag-spicy">Spicy</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Volcano Roll</h3>
+            <p class="menu-card-desc">Spicy tuna and jalapeño inside, baked with creamy scallop topping and tobiko.</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">$24</span>
+              <button class="menu-card-order" aria-label="Add Volcano Roll to order" title="Add to order">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sashimi -->
+        <div class="menu-card fade-in" data-category="sashimi" id="menu-tuna-sashimi">
+          <div class="menu-card-img-wrap">
+            <img class="menu-card-img" src="images/tuna_sashimi.png" alt="Bluefin Tuna Sashimi" loading="lazy" />
+            <span class="menu-card-tag tag-popular">Popular</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Bluefin Tuna Sashimi</h3>
+            <p class="menu-card-desc">Premium sliced bluefin tuna, served with freshly grated wasabi and ponzu.</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">$38</span>
+              <button class="menu-card-order" aria-label="Add Bluefin Tuna Sashimi to order" title="Add to order">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card fade-in" data-category="sashimi" id="menu-omakase">
+          <div class="menu-card-img-wrap">
+            <img class="menu-card-img" src="images/hero.png" alt="Omakase Platter" loading="lazy" />
+            <span class="menu-card-tag tag-new">Signature</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Omakase Platter</h3>
+            <p class="menu-card-desc">Chef's seasonal selection of 12 premium sashimi cuts. The ultimate dining experience.</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">$95</span>
+              <button class="menu-card-order" aria-label="Add Omakase Platter to order" title="Add to order">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dessert -->
+        <div class="menu-card fade-in" data-category="dessert" id="menu-matcha-mochi">
+          <div class="menu-card-img-wrap">
+            <img class="menu-card-img" src="images/matcha_dessert.png" alt="Matcha Mochi & Tea" loading="lazy" />
+            <span class="menu-card-tag tag-new">New</span>
+          </div>
+          <div class="menu-card-body">
+            <h3 class="menu-card-name">Matcha Mochi & Ceremony Tea</h3>
+            <p class="menu-card-desc">House-made ceremonial matcha ice cream mochi with a cup of Uji matcha tea.</p>
+            <div class="menu-card-footer">
+              <span class="menu-card-price">$14</span>
+              <button class="menu-card-order" aria-label="Add Matcha Mochi to order" title="Add to order">+</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" aria-label="Dining experience section">
+    <div class="container">
+      <div class="fade-in" style="text-align:center;">
+        <span class="section-label">✦ Why Sushi Zen</span>
+        <h2 class="section-title">An Unforgettable Experience</h2>
+        <div class="divider" style="margin-left: auto; margin-right: auto;"></div>
+      </div>
+
+      <div class="experience-grid">
+
+        <div class="experience-card fade-in" id="exp-omakase">
+          <span class="exp-icon">🎋</span>
+          <h3 class="exp-title">Omakase Journey</h3>
+          <p class="exp-desc">
+            Trust the chef. Our omakase menu changes daily based on the finest
+            seasonal ingredients available, offering a truly unique experience
+            every visit.
+          </p>
+        </div>
+
+        <div class="experience-card fade-in" id="exp-sake">
+          <span class="exp-icon">🍶</span>
+          <h3 class="exp-title">Sake Pairing</h3>
+          <p class="exp-desc">
+            Our certified sake sommelier will guide you through a curated
+            selection of over 100 premium Japanese sake to complement your meal
+            perfectly.
+          </p>
+        </div>
+
+        <div class="experience-card fade-in" id="exp-private">
+          <span class="exp-icon">🏮</span>
+          <h3 class="exp-title">Private Dining</h3>
+          <p class="exp-desc">
+            Host intimate gatherings or special celebrations in our exclusive
+            tatami private dining room, with personalized menus and dedicated
+            service.
+          </p>
+        </div>
+
+        <div class="experience-card fade-in" id="exp-live">
+          <span class="exp-icon">🔪</span>
+          <h3 class="exp-title">Live Sushi Bar</h3>
+          <p class="exp-desc">
+            Sit at our 8-seat hinoki wood counter and watch Master Chef Tanaka
+            craft each piece of sushi right before your eyes — an art form in
+            motion.
+          </p>
+        </div>
+
+        <div class="experience-card fade-in" id="exp-fresh">
+          <span class="exp-icon">🌊</span>
+          <h3 class="exp-title">Ocean Fresh</h3>
+          <p class="exp-desc">
+            Every morning, our team hand-selects the finest fish delivered
+            directly from certified Tsukiji-network suppliers across Japan and
+            the Pacific.
+          </p>
+        </div>
+
+        <div class="experience-card fade-in" id="exp-zen">
+          <span class="exp-icon">🌸</span>
+          <h3 class="exp-title">Zen Ambiance</h3>
+          <p class="exp-desc">
+            Designed by award-winning architects, our space blends traditional
+            Japanese minimalism with contemporary luxury — a sanctuary for the
+            senses.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESERVATION ===== -->
+  <section id="reservation" aria-label="Contact and reservation section">
+    <div class="container">
+      <div class="reservation-inner">
+
+        <div class="fade-in">
+          <img class="reservation-img" src="images/ambiance.png" alt="Sushi Zen interior" loading="lazy" />
+        </div>
+
+        <div class="reservation-info fade-in">
+          <span class="section-label">✦ Find Us</span>
+          <h2 class="section-title">Visit <span class="gold-text">Sushi Zen</span></h2>
+          <div class="divider"></div>
+          <p class="section-subtitle">
+            We are located in the heart of the city. Reservations are strongly
+            recommended to secure your preferred time and seating.
+          </p>
+
+          <ul class="info-list">
+            <li class="info-item">
+              <div class="info-icon">📍</div>
+              <div>
+                <div class="info-label">Address</div>
+                <div class="info-value">14 Sakura Lane, Tokyo District, New York, NY 10013</div>
+              </div>
+            </li>
+            <li class="info-item">
+              <div class="info-icon">🕐</div>
+              <div>
+                <div class="info-label">Hours</div>
+                <div class="info-value">Tue–Sun: 12:00 PM – 10:30 PM &nbsp;|&nbsp; Monday: Closed</div>
+              </div>
+            </li>
+            <li class="info-item">
+              <div class="info-icon">📞</div>
+              <div>
+                <div class="info-label">Reservations</div>
+                <div class="info-value">+1 (212) 555-0192</div>
+              </div>
+            </li>
+            <li class="info-item">
+              <div class="info-icon">✉️</div>
+              <div>
+                <div class="info-label">Email</div>
+                <div class="info-value">hello@sushizen.com</div>
+              </div>
+            </li>
+          </ul>
+
+          <button class="btn-primary" id="reserve-section-btn" onclick="openModal(event)">
+            <span>Book Your Table</span>
+            <span>→</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo" id="footer-logo">
+            <div class="nav-logo-mark">🍣</div>
+            <span class="nav-logo-text">Sushi<span>Zen</span></span>
+          </a>
+          <p>
+            Crafting unforgettable Japanese dining experiences since 2012.
+            Every piece of sushi is a work of art.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" id="social-instagram" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" id="social-facebook" aria-label="Facebook">📘</a>
+            <a href="#" class="social-link" id="social-twitter" aria-label="X / Twitter">🐦</a>
+            <a href="#" class="social-link" id="social-yelp" aria-label="Yelp">⭐</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="#story" id="footer-nav-story">Our Story</a></li>
+            <li><a href="#menu" id="footer-nav-menu">Menu</a></li>
+            <li><a href="#experience" id="footer-nav-exp">Experience</a></li>
+            <li><a href="#reservation" id="footer-nav-contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Offerings</h4>
+          <ul class="footer-links">
+            <li><a href="#menu" id="footer-link-omakase">Omakase</a></li>
+            <li><a href="#menu" id="footer-link-sashimi">Sashimi</a></li>
+            <li><a href="#menu" id="footer-link-rolls">Signature Rolls</a></li>
+            <li><a href="#experience" id="footer-link-private">Private Dining</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Visit</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+12125550192" id="footer-phone">+1 (212) 555-0192</a></li>
+            <li><a href="mailto:hello@sushizen.com" id="footer-email">hello@sushizen.com</a></li>
+            <li><a href="#reservation" id="footer-address">14 Sakura Lane, NY</a></li>
+            <li><a href="#" id="footer-reserve" onclick="openModal(event)">Reserve a Table</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2024 <span>Sushi Zen</span>. All rights reserved. Crafted with ❤️ in New York.
+        </p>
+        <p class="footer-copy">
+          <a href="#" id="footer-privacy" style="color:var(--text-muted);">Privacy Policy</a> &nbsp;·&nbsp;
+          <a href="#" id="footer-terms" style="color:var(--text-muted);">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== RESERVATION MODAL ===== -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal" id="reservation-modal">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close reservation modal" onclick="closeModal()">✕</button>
+
+      <div id="modal-form-content">
+        <h2 class="modal-title" id="modal-title">Reserve a Table</h2>
+        <p class="modal-subtitle">Complete the form below and we'll confirm your booking within 2 hours.</p>
+
+        <form id="reservation-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="res-firstname">First Name</label>
+              <input class="form-input" id="res-firstname" type="text" placeholder="Hiroshi" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="res-lastname">Last Name</label>
+              <input class="form-input" id="res-lastname" type="text" placeholder="Tanaka" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="res-email">Email Address</label>
+            <input class="form-input" id="res-email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="res-phone">Phone Number</label>
+            <input class="form-input" id="res-phone" type="tel" placeholder="+1 (212) 555-0000" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="res-date">Date</label>
+              <input class="form-input" id="res-date" type="date" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="res-time">Time</label>
+              <select class="form-select" id="res-time" required>
+                <option value="">Select time</option>
+                <option>12:00 PM</option>
+                <option>12:30 PM</option>
+                <option>1:00 PM</option>
+                <option>6:00 PM</option>
+                <option>6:30 PM</option>
+                <option>7:00 PM</option>
+                <option>7:30 PM</option>
+                <option>8:00 PM</option>
+                <option>8:30 PM</option>
+                <option>9:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="res-guests">Number of Guests</label>
+            <select class="form-select" id="res-guests" required>
+              <option value="">Select guests</option>
+              <option>1 Guest</option>
+              <option>2 Guests</option>
+              <option>3 Guests</option>
+              <option>4 Guests</option>
+              <option>5 Guests</option>
+              <option>6 Guests</option>
+              <option>7+ Guests (Private Dining)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="res-notes">Special Requests</label>
+            <textarea class="form-textarea" id="res-notes" placeholder="Dietary requirements, allergies, occasion, seating preferences…"></textarea>
+          </div>
+
+          <button class="btn-primary form-submit" id="modal-submit-btn" type="submit">
+            <span>Confirm Reservation</span>
+            <span>🍣</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="form-success" id="form-success">
+        <div class="success-icon">🎋</div>
+        <h3 class="success-title">Reservation Confirmed!</h3>
+        <p class="success-text">
+          Thank you! We have received your reservation and will send a confirmation
+          to your email within 2 hours. We look forward to welcoming you to Sushi Zen.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
