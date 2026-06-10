@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="YATAI — Asian street food delivered to your door. Authentic ramen, sushi rolls, bao buns and more. Order online for delivery or pickup." />
+  <meta name="keywords" content="Asian street food, ramen, sushi, bao buns, gyoza, delivery, pickup, online order" />
+  <meta property="og:title" content="YATAI — Street Asian Food" />
+  <meta property="og:description" content="Bold Asian street flavors. Order online for delivery or pickup." />
+  <title>YATAI — Street Asian Food | Order Online</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍜</text></svg>" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+
+      <a href="#hero" class="nav-logo" id="nav-logo">
+        <div class="nav-logo-icon">🍜</div>
+        <span class="nav-logo-text">YA<em>TAI</em></span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#menu"  id="nav-menu-link">Menu</a></li>
+        <li><a href="#about" id="nav-about-link">Our Story</a></li>
+        <li>
+          <button class="nav-cart-btn" id="nav-cart-btn" onclick="openDrawer()" aria-label="Open cart">
+            🛒 Cart
+            <span class="cart-badge" id="cart-badge">0</span>
+          </button>
+        </li>
+      </ul>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" aria-label="Hero section">
+    <div class="hero-bg">
+      <img src="images/hero.png" alt="Tokyo street food alley at night" loading="eager" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          Now Delivering · Open Until 11 PM
+        </div>
+
+        <h1 class="hero-title">
+          STREET<br />
+          <span class="line2">FLAVORS</span>
+        </h1>
+
+        <p class="hero-desc">
+          Born in the alleys of Tokyo. Raised on bold spices and fire.
+          Real Asian street food — ramen, sushi, bao and more —
+          delivered hot to your door or ready for pickup.
+        </p>
+
+        <div class="hero-cta">
+          <button class="btn-fire" id="hero-order-btn" onclick="openDrawer()">
+            <span>🔥</span> Order Now
+          </button>
+          <a href="#menu" class="btn-ghost" id="hero-menu-btn">
+            <span>📋</span> See the Menu
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <span class="stat-num" data-count="4.9">0</span>
+            <span class="stat-label">Star Rating</span>
+          </div>
+          <div>
+            <span class="stat-num" data-count="2800">0</span>
+            <span class="stat-label">Orders / Week</span>
+          </div>
+          <div>
+            <span class="stat-num" data-count="25">0</span>
+            <span class="stat-label">Min Delivery</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE ===== -->
+  <div id="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marquee-track">
+      <!-- duplicated for seamless loop -->
+      <span class="marquee-item"><span class="marquee-dot"></span>TONKOTSU RAMEN</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>CRISPY BAO BUNS</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>SPICY SUSHI ROLLS</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>PAN-FRIED GYOZA</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>YUZU LEMONADE</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>MATCHA BUBBLE TEA</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>DELIVERY IN 25 MIN</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>PICKUP AVAILABLE</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>TONKOTSU RAMEN</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>CRISPY BAO BUNS</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>SPICY SUSHI ROLLS</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>PAN-FRIED GYOZA</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>YUZU LEMONADE</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>MATCHA BUBBLE TEA</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>DELIVERY IN 25 MIN</span>
+      <span class="marquee-item"><span class="marquee-dot"></span>PICKUP AVAILABLE</span>
+    </div>
+  </div>
+
+  <!-- ===== MENU ===== -->
+  <section id="menu" aria-label="Menu section">
+    <div class="container">
+      <div class="menu-header fade-up">
+        <div class="section-eyebrow">✦ What We Make</div>
+        <h2 class="section-heading">THE <span class="neon-orange">MENU</span></h2>
+        <p class="section-sub">Every dish cooked fresh when you order. No freezers. No shortcuts.</p>
+      </div>
+
+      <div class="menu-filters fade-up" role="group" aria-label="Menu category filters">
+        <button class="filter-btn active" data-filter="all"     id="f-all">All Items</button>
+        <button class="filter-btn"        data-filter="sushi"   id="f-sushi">🍣 Sushi</button>
+        <button class="filter-btn"        data-filter="ramen"   id="f-ramen">🍜 Ramen</button>
+        <button class="filter-btn"        data-filter="bites"   id="f-bites">🥟 Bao &amp; Bites</button>
+        <button class="filter-btn"        data-filter="drinks"  id="f-drinks">🧃 Drinks</button>
+      </div>
+
+      <div class="menu-grid" id="menu-grid">
+
+        <!-- SUSHI -->
+        <div class="menu-card fade-up" data-category="sushi" id="card-spicy-roll"
+             data-name="Spicy Street Roll" data-price="14" data-img="images/spicy_roll.png">
+          <div class="card-img-wrap">
+            <img class="card-img" src="images/spicy_roll.png" alt="Spicy Street Roll" loading="lazy" />
+            <span class="card-tag tag tag-hot">🔥 Hot</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-name">Spicy Street Roll</h3>
+            <p class="card-desc">Spicy tuna & jalapeño inside, sriracha mayo drizzle, tobiko, crispy shallots on top.</p>
+            <div class="card-footer">
+              <span class="card-price">$14</span>
+              <button class="card-add" id="add-spicy-roll" onclick="addToCart(this)">+ ADD</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card fade-up" data-category="sushi" id="card-salmon-crunch"
+             data-name="Salmon Crunch Roll" data-price="16" data-img="images/spicy_roll.png">
+          <div class="card-img-wrap">
+            <img class="card-img" src="images/spicy_roll.png" alt="Salmon Crunch Roll" loading="lazy" />
+            <span class="card-tag tag tag-fav">⭐ Fan Fav</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-name">Salmon Crunch Roll</h3>
+            <p class="card-desc">Fresh salmon, cream cheese, cucumber, tempura crunch, spicy mayo. Street-style classic.</p>
+            <div class="card-footer">
+              <span class="card-price">$16</span>
+              <button class="card-add" id="add-salmon-crunch" onclick="addToCart(this)">+ ADD</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- RAMEN -->
+        <div class="menu-card fade-up" data-category="ramen" id="card-tonkotsu"
+             data-name="Tonkotsu Ramen" data-price="17" data-img="images/ramen.png">
+          <div class="card-img-wrap">
+            <img class="card-img" src="images/ramen.png" alt="Tonkotsu Ramen" loading="lazy" />
+            <span class="card-tag tag tag-fav">⭐ Fan Fav</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-name">Tonkotsu Ramen</h3>
+            <p class="card-desc">18-hour pork bone broth, chashu pork, soft egg, nori, bamboo shoots, spring onion.</p>
+            <div class="card-footer">
+              <span class="card-price">$17</span>
+              <button class="card-add" id="add-tonkotsu" onclick="addToCart(this)">+ ADD</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card fade-up" data-category="ramen" id="card-miso-ramen"
+             data-name="Spicy Miso Ramen" data-price="16" data-img="images/ramen.png">
+          <div class="card-img-wrap">
+            <img class="card-img" src="images/ramen.png" alt="Spicy Miso Ramen" loading="lazy" />
+            <span class="card-tag tag tag-hot">🔥 Hot</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-name">Spicy Miso Ramen</h3>
+            <p class="card-desc">Rich miso broth with chili oil, ground pork, soft boiled egg, corn and crispy garlic.</p>
+            <div class="card-footer">
+              <span class="card-price">$16</span>
+              <button class="card-add" id="add-miso-ramen" onclick="addToCart(this)">+ ADD</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAO & BITES -->
+        <div class="menu-card fade-up" data-category="bites" id="card-pork-bao"
+             data-name="Crispy Pork Bao (x2)" data-price="13" data-img="images/bao.png">
+          <div class="card-img-wrap">
+            <img class="card-img" src="images/bao.png" alt="Crispy Pork Bao" loading="lazy" />
+            <span class="card-tag tag tag-new">✨ New</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-name">Crispy Pork Bao (x2)</h3>
+            <p class="card-desc">Fluffy steamed bao, slow-braised pork belly, pickled daikon, sriracha, herbs.</p>
+            <div class="card-footer">
+              <span class="card-price">$13</span>
+              <button class="card-add" id="add-pork-bao" onclick="addToCart(this)">+ ADD</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card fade-up" data-category="bites" id="card-gyoza"
+             data-name="Pan-Fried Gyoza (6pc)" data-price="11" data-img="images/gyoza.png">
+          <div class="card-img-wrap">
+            <img class="card-img" src="images/gyoza.png" alt="Pan-Fried Gyoza" loading="lazy" />
+            <span class="card-tag tag tag-vegan">🥬 Vegan Opt</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-name">Pan-Fried Gyoza (6pc)</h3>
+            <p class="card-desc">Golden crispy dumplings, pork & cabbage or veggie filling, chili-sesame dipping sauce.</p>
+            <div class="card-footer">
+              <span class="card-price">$11</span>
+              <button class="card-add" id="add-gyoza" onclick="addToCart(this)">+ ADD</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-card fade-up" data-category="drinks" id="card-yuzu"
+             data-name="Yuzu Lemonade" data-price="6" data-img="images/drinks.png">
+          <div class="card-img-wrap">
+            <img class="card-img" src="images/drinks.png" alt="Yuzu Lemonade" loading="lazy" />
+            <span class="card-tag tag tag-new">✨ New</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-name">Yuzu Lemonade</h3>
+            <p class="card-desc">Fresh yuzu citrus, sparkling water, honey, shiso leaf. Bright and refreshing.</p>
+            <div class="card-footer">
+              <span class="card-price">$6</span>
+              <button class="card-add" id="add-yuzu" onclick="addToCart(this)">+ ADD</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-card fade-up" data-category="drinks" id="card-bubble-tea"
+             data-name="Matcha Bubble Tea" data-price="7" data-img="images/drinks.png">
+          <div class="card-img-wrap">
+            <img class="card-img" src="images/drinks.png" alt="Matcha Bubble Tea" loading="lazy" />
+            <span class="card-tag tag tag-fav">⭐ Fan Fav</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-name">Matcha Bubble Tea</h3>
+            <p class="card-desc">Ceremonial grade matcha, oat milk, brown sugar tapioca pearls. Creamy & earthy.</p>
+            <div class="card-footer">
+              <span class="card-price">$7</span>
+              <button class="card-add" id="add-bubble-tea" onclick="addToCart(this)">+ ADD</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /menu-grid -->
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" aria-label="About YATAI">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-img-wrap fade-up">
+          <img class="about-img" src="images/street.png" alt="YATAI street kitchen chef" loading="lazy" />
+          <div class="about-img-badge">
+            <span class="about-badge-num">25</span>
+            <span class="about-badge-text">Min Avg Delivery</span>
+          </div>
+        </div>
+
+        <div class="about-text fade-up">
+          <div class="section-eyebrow">✦ Born on the Streets</div>
+          <h2 class="section-heading">REAL FOOD.<br /><span class="neon-orange">NO RULES.</span></h2>
+          <p class="about-desc">
+            YATAI started as a single ramen cart outside Shibuya station.
+            Today we bring that same fire, those same recipes — unchanged —
+            straight to your door. No white tablecloths. No reservations.
+            Just bold, honest Asian street food cooked fresh every single day.
+          </p>
+          <p class="about-desc">
+            Every broth is simmered for 18+ hours. Every bao is steamed to order.
+            Every roll is cut by hand. That's the YATAI way.
+          </p>
+
+          <div class="about-features">
+            <div class="about-feat">
+              <span class="about-feat-icon">🔥</span>
+              <span class="about-feat-label">Cooked Fresh to Order</span>
+            </div>
+            <div class="about-feat">
+              <span class="about-feat-icon">⚡</span>
+              <span class="about-feat-label">25-Min Delivery</span>
+            </div>
+            <div class="about-feat">
+              <span class="about-feat-icon">🥬</span>
+              <span class="about-feat-label">Vegan Options</span>
+            </div>
+            <div class="about-feat">
+              <span class="about-feat-icon">🏪</span>
+              <span class="about-feat-label">Easy Pickup</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <div class="nav-logo-icon">🍜</div>
+            <span class="nav-logo-text">YA<em>TAI</em></span>
+          </div>
+          <p>Asian street food born in Tokyo alleys, delivered to your door. Bold flavors, fast service, zero compromises.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" id="social-ig"  aria-label="Instagram">📷</a>
+            <a href="#" class="social-btn" id="social-tt"  aria-label="TikTok">🎵</a>
+            <a href="#" class="social-btn" id="social-tw"  aria-label="Twitter">🐦</a>
+            <a href="#" class="social-btn" id="social-yt"  aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">MENU</h4>
+          <ul class="footer-links">
+            <li><a href="#menu" id="f-link-sushi">Sushi Rolls</a></li>
+            <li><a href="#menu" id="f-link-ramen">Ramen</a></li>
+            <li><a href="#menu" id="f-link-bao">Bao &amp; Bites</a></li>
+            <li><a href="#menu" id="f-link-drinks">Drinks</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">ORDER</h4>
+          <ul class="footer-links">
+            <li><a href="#" id="f-delivery" onclick="openDrawer();return false;">Delivery</a></li>
+            <li><a href="#" id="f-pickup"   onclick="openDrawer();return false;">Pickup</a></li>
+            <li><a href="#" id="f-track">Track Order</a></li>
+            <li><a href="#" id="f-catering">Catering</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">CONTACT</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+12125550199" id="f-phone">+1 (212) 555-0199</a></li>
+            <li><a href="mailto:order@yatai.com" id="f-email">order@yatai.com</a></li>
+            <li><a href="#" id="f-addr">88 Ramen St, New York</a></li>
+            <li><a href="#" id="f-hours">Mon–Sun 11AM–11PM</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 <span>YATAI</span>. All rights reserved. Made with 🔥 in New York.</p>
+        <p>
+          <a href="#" id="f-privacy" style="color:var(--text3)">Privacy Policy</a> ·
+          <a href="#" id="f-terms"   style="color:var(--text3)">Terms</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== CART DRAWER ===== -->
+  <div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" role="complementary">
+    <div class="drawer-header">
+      <h2 class="drawer-title">YOUR ORDER 🛒</h2>
+      <button class="drawer-close" id="drawer-close-btn" onclick="closeDrawer()" aria-label="Close cart">✕</button>
+    </div>
+
+    <!-- Delivery / Pickup Toggle -->
+    <div class="order-type-toggle" role="group" aria-label="Order type">
+      <button class="toggle-opt active" id="toggle-delivery" onclick="setOrderType('delivery')">🛵 Delivery</button>
+      <button class="toggle-opt"       id="toggle-pickup"   onclick="setOrderType('pickup')">🏪 Pickup</button>
+    </div>
+
+    <div class="delivery-address show" id="delivery-address">
+      <input class="addr-input" id="addr-input" type="text" placeholder="Enter your delivery address…" aria-label="Delivery address" />
+    </div>
+
+    <!-- Items -->
+    <div class="cart-items" id="cart-items">
+      <div class="cart-empty" id="cart-empty">
+        <div class="cart-empty-icon">🍜</div>
+        <p class="cart-empty-text">Your cart is empty.<br />Add something delicious!</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="drawer-footer">
+      <div class="cart-summary" id="cart-summary" style="display:none">
+        <div class="summary-row"><span>Subtotal</span><span id="summary-subtotal">$0.00</span></div>
+        <div class="summary-row" id="delivery-fee-row"><span>Delivery fee</span><span>$2.99</span></div>
+        <div class="summary-row total"><span>Total</span><span id="summary-total">$0.00</span></div>
+      </div>
+      <button class="checkout-btn" id="checkout-btn" onclick="openCheckout()" disabled>
+        Place Order →
+      </button>
+    </div>
+  </aside>
+
+  <!-- ===== CHECKOUT MODAL ===== -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="checkout-modal-title">
+    <div class="checkout-modal" id="checkout-modal">
+      <button class="modal-close" onclick="closeCheckout()" aria-label="Close checkout">✕</button>
+
+      <div id="checkout-form-wrap">
+        <h2 class="modal-title" id="checkout-modal-title">CHECKOUT</h2>
+        <p class="modal-sub" id="checkout-modal-sub">Almost there — just a few details.</p>
+
+        <!-- Mini order summary -->
+        <div class="order-summary-mini" id="order-summary-mini">
+          <div class="order-summary-mini-title">Order Summary</div>
+          <div id="mini-items"></div>
+          <div class="mini-total">
+            <span>Total</span>
+            <span id="mini-total-val">$0.00</span>
+          </div>
+        </div>
+
+        <form id="checkout-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="co-first">First Name</label>
+              <input class="form-input" id="co-first" type="text" placeholder="Kenji" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="co-last">Last Name</label>
+              <input class="form-input" id="co-last" type="text" placeholder="Mori" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="co-phone">Phone Number</label>
+            <input class="form-input" id="co-phone" type="tel" placeholder="+1 (212) 555-0000" required />
+          </div>
+
+          <div class="form-group" id="co-addr-group">
+            <label class="form-label" for="co-addr">Delivery Address</label>
+            <input class="form-input" id="co-addr" type="text" placeholder="88 Ramen St, Apt 3B, New York" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="co-time">Preferred Time</label>
+            <select class="form-select" id="co-time" required>
+              <option value="">Select a time slot</option>
+              <option>ASAP (25–35 min)</option>
+              <option>In 1 hour</option>
+              <option>In 1.5 hours</option>
+              <option>In 2 hours</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="co-notes">Special Instructions</label>
+            <input class="form-input" id="co-notes" type="text" placeholder="No onions, extra spicy, ring doorbell…" />
+          </div>
+
+          <button class="submit-order-btn" id="submit-order-btn" type="submit">
+            🔥 Confirm Order
+          </button>
+        </form>
+      </div>
+
+      <!-- Success Screen -->
+      <div class="order-success" id="order-success">
+        <div class="success-emoji">🎉</div>
+        <h3 class="success-h">ORDER PLACED!</h3>
+        <p class="success-p">
+          Your food is being prepared with fire and love.<br />
+          We'll text you when it's on the way.
+        </p>
+        <div class="eta-badge" id="eta-badge">⚡ ETA: 25–35 minutes</div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
